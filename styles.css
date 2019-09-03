@@ -1,5 +1,8 @@
+/* TODO: Fix CSS page */
+
 h1 {
     font-family: 'Roboto', sans-serif;
+
 }
 .center {
     width: 100%;
@@ -7,4 +10,10 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.mylinks {
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
 }
