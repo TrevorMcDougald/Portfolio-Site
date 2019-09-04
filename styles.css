@@ -12,8 +12,24 @@ h1 {
     justify-content: center;
 }
 
-.mylinks {
-    margin: 0 auto;
-    display: flex;
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
+/*.mylinks {*/
+/*    margin: 0 auto;*/
+/*    display: flex;*/
+/*    text-align: center;*/
+/*}*/
+.Header {
+    text-align: center;
+}
+
+.portfolio_links {
     text-align: center;
 }
