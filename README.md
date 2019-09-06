@@ -1,4 +1,7 @@
 # Repository for portfolio website
+TODO: Look up "Emmet" (HTML template), look up "Flow" (JS Linter),
+
+
 
 #### 9/3/2019
 - I figured out that to redirect all of my domains to my main one I 
@@ -19,3 +22,10 @@ Domain Name System (DNS) directory service (route 53?).
         to switch to a different domain, although I assumed it'd do it
         automatically. 
 - I spent the rest of my time figuring out how to format HTML5/CSS
+- I solved the formatter, but the website redirection isn't solved with
+the CNAME cert like I thought...
+
+#### 9/5/2019
+-   I changed the text/background color of the website. I also changed the font size
+-   I learned more about HTTP / HTML / CSS. 
+-   I'm still having trouble rerouting trevormcdougald.com to mcdougald.info... 
