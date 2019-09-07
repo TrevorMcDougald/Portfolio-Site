@@ -2,10 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="author" content="Trevor McDougald" />
     <meta
       name="description"
       content="I'm Trevor McDougald. This is my SWE Portfolio Website"
     />
+    <!--
+    viewport is the user's visible area of a web page (varies with device
+    HTML5 allows users to control it
+    -->
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <title>Trevor McDougald Portfolio Website</title>
     <link
@@ -13,15 +18,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <meta name="author" content="Trevor McDougald" />
   </head>
 
-  <body style="background-color:#333;margin-top:0px;margin-left:0px;">
-    <div class="Header">
+  <body style="background-color:#333;margin-top:0;margin-left:0;">
+    <!-- class names should be lowercase?-->
+    <div class="header">
       <h1>
-        <span style="color: #DDDDDD;font-size:50px"
-          ><strong>Portfolio</strong><br /><strong
-            >Trevor McDougald</strong
+        <!-- "alt" attribute provides text to be displayed if image is not available -->
+        <img
+          src="images/profile.PNG"
+          alt="profile illustration"
+          style="width:132px; height:130px"
+        /><br />
+        <span style="color: #DDDDDD; font-size:50px"
+          ><strong>Trevor McDougald</strong><br /><strong
+            >Portfolio</strong
           ></span
         >
       </h1>
@@ -30,31 +41,51 @@
       <h4 style="color: #DDDDDD;font-size:20px">
         <span style="background-color: #333;">
           <a
+            class="image_link"
             title="github"
             href="https://github.com/TrevorMcDougald"
-            style="color: #DDDDDD"
-            >GitHub</a
-          >&nbsp; &nbsp; &nbsp;<a
+          >
+            <img
+              src="images/github.png"
+              style="width:51px; height:50px;border:0;"
+              alt="Github"
+            />
+          </a>
+          &nbsp; &nbsp; &nbsp;<a
+            class="image_link"
             title="Linkedin"
             href="https://www.linkedin.com/in/trevormcdougald/"
-            style="color: #DDDDDD"
-            >Linkedin</a
+          >
+            <img
+              src="images/linkedin.png"
+              style="width:56px; height:54px;border:0;"
+              alt="Linkedin"
+            /> </a
           >&nbsp; &nbsp; &nbsp;<a
+            class="image_link"
             title="stackoverflow"
             href="https://stackoverflow.com/u/5233908"
-            style="color: #DDDDDD"
-            >StackOverflow</a
+          >
+            <img
+              src="images/stackoverflow.png"
+              style="width:44px; height:51px;border:0;"
+              alt="Stackoverflow"
+            /> </a
           >&nbsp; &nbsp; &nbsp;<a
-            title="Facebook"
+            class="image_link"
+            title="facebook"
             href="https://www.facebook.com/trevor.mcdougald.7"
-            style="color: #DDDDDD"
-            >Facebook</a
-          ></span
-        >
+          >
+            <img
+              src="images/facebook.png"
+              style="width:59px; height:55px;border:0;"
+              alt="Facebook"
+            /> </a
+        ></span>
       </h4>
     </div>
     <p>&nbsp;</p>
-    <div class="Resume">
+    <div class="resume">
       <h2 style="text-align: center;font-size:35px">
         <a title="Resume" href="mcdougald.info/resume" style="color: #DDDDDD"
           >Resume</a

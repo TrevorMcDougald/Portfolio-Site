@@ -29,3 +29,12 @@ the CNAME cert like I thought...
 -   I changed the text/background color of the website. I also changed the font size
 -   I learned more about HTTP / HTML / CSS. 
 -   I'm still having trouble rerouting trevormcdougald.com to mcdougald.info... 
+     *          I can't fix it for shit. I edited my resume to have mcdougald.info
+                instead.
+-   I need to add my email into the page (nvm, I don't want to get spammed)
+
+#### 9/7/2019
+- I added a profile image, and changed my links to icons instead. I also
+messed around with the layout a little bit
+    *       I needed to set the position of a class to "relative" to move it.
+- Remember to press Alt-Shift-Ctrl-P to reformat
