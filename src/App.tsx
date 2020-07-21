@@ -1,17 +1,23 @@
 import React, { FunctionComponent } from "react";
 import "twin.macro";
-import Header from "./components/layout/Header";
-import Resume from "./components/Resume";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import Header from "./components/layout/Header/Header";
+import Resume from "./components/Resume/Resume";
 import "tailwindcss/dist/base.min.css";
 import "./App.css";
 
+library.add(fab);
+
 const App: FunctionComponent = () => {
   return (
-    <div tw="bg-gray-300 min-h-screen max-w-full overflow-hidden flex flex-col items-center">
-      <Header />
-      <Resume />
-      <div className="Footer flex-col flex-none bg-gray-800 w-full">
-        <h2>Footer</h2>
+    <div tw='bg-gray-100 min-h-screen max-w-full overflow-hidden flex flex-col'>
+      <div tw='flex flex-grow min-h-screen flex-row justify-start'>
+        <Header siteTitle='Trevor McDougald' />
+        <Resume />
+      </div>
+      <div tw='flex-col flex-none bg-gray-600 w-full text-right'>
+        <h2 tw='text-gray-100 pr-8'>TM</h2>
       </div>
     </div>
   );

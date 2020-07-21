@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/react": "^10.4.7",
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
@@ -33,7 +37,7 @@
   },
   "babelMacros": {
     "twin": {
-      "config": "src/tailwind.config.js",
+      "config": "./tailwind.config.js",
       "preset": "styled-components",
       "autoCssProp": true,
       "debugProp": true,
@@ -45,7 +49,7 @@
   "eslintConfig": {
     "extends": [
       "airbnb-typescript",
-      "plugin:react/recommended",
+      "plugin:react/all",
       "airbnb/hooks",
       "plugin:@typescript-eslint/recommended",
       "plugin:jest/recommended",
@@ -79,6 +83,13 @@
     },
     "rules": {
       "linebreak-style": "off",
+      "react/jsx-no-literals": 0,
+      "react/function-component-definition": [
+        1,
+        {
+          "namedComponents": "arrow-function"
+        }
+      ],
       "prettier/prettier": [
         "error",
         {

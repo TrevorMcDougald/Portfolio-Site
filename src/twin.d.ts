@@ -5,3 +5,9 @@ declare module "twin.macro" {
   const css: typeof cssProperty;
   const styled: typeof styledComponent;
 }
+
+declare module "react" {
+  interface Attributes {
+    css?: CSSProperty;
+  }
+}
