@@ -17,9 +17,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "."
   },
   "include": [
-    "src"
+    "src",
+    "./tailwind.config.js",
+    "./postcss.config.js",
+    "twin.d.ts"
   ]
 }
