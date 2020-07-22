@@ -23,16 +23,32 @@ const Header: FunctionComponent<Props> = ({ siteTitle }: OwnProps) => {
         <HeaderTitle>{siteTitle}</HeaderTitle>
         <div tw='flex self-center pb-8 w-3/5 justify-around'>
           <a href='https://github.com/TrevorMcDougald'>
-            <FontAwesomeIcon icon={["fab", "github"]} size='3x' tw='text-blue-900 px-2' />
+            <FontAwesomeIcon
+              icon={["fab", "github"]}
+              size='3x'
+              tw='text-blue-900 px-2 hover:text-blue-800'
+            />
           </a>
           <a href='https://www.linkedin.com/in/trevormcdougald/'>
-            <FontAwesomeIcon icon={["fab", "linkedin"]} size='3x' tw='text-blue-900 px-2' />
+            <FontAwesomeIcon
+              icon={["fab", "linkedin"]}
+              size='3x'
+              tw='text-blue-900 px-2 hover:text-blue-800'
+            />
           </a>
           <a href='https://stackoverflow.com/users/5233908/trevor-mcdougald'>
-            <FontAwesomeIcon icon={["fab", "stack-overflow"]} size='3x' tw='text-blue-900 px-2' />
+            <FontAwesomeIcon
+              icon={["fab", "stack-overflow"]}
+              size='3x'
+              tw='text-blue-900 px-2 hover:text-blue-800'
+            />
           </a>
           <a href='https://www.facebook.com/trevor.mcdougald.7'>
-            <FontAwesomeIcon icon={["fab", "facebook"]} size='3x' tw='text-blue-900 px-2' />
+            <FontAwesomeIcon
+              icon={["fab", "facebook"]}
+              size='3x'
+              tw='text-blue-900 px-2 hover:text-blue-800'
+            />
           </a>
         </div>
         <div tw='flex self-center'>
