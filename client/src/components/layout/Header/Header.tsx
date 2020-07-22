@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import tw, { styled } from "twin.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import HeaderIcon from "./HeaderIcon";
 
 interface OwnProps {
   siteTitle: string;
@@ -16,40 +17,19 @@ const NavigationLink = styled.a<{ active: boolean }>`
   text-underline-offset: 0;
 `;
 
-const Header: FunctionComponent<Props> = ({ siteTitle }: OwnProps) => {
+const Header: FunctionComponent<Props> = ({ siteTitle }: Props) => {
   return (
     <header className='flex w-1/3 min-h-full bg-gray-200' data-testid='header'>
       <div tw='flex flex-col flex-none w-full self-center pb-32'>
         <HeaderTitle>{siteTitle}</HeaderTitle>
         <div tw='flex self-center pb-8 w-3/5 justify-around'>
-          <a href='https://github.com/TrevorMcDougald'>
-            <FontAwesomeIcon
-              icon={["fab", "github"]}
-              size='3x'
-              tw='text-blue-900 px-2 hover:text-blue-800'
-            />
-          </a>
-          <a href='https://www.linkedin.com/in/trevormcdougald/'>
-            <FontAwesomeIcon
-              icon={["fab", "linkedin"]}
-              size='3x'
-              tw='text-blue-900 px-2 hover:text-blue-800'
-            />
-          </a>
-          <a href='https://stackoverflow.com/users/5233908/trevor-mcdougald'>
-            <FontAwesomeIcon
-              icon={["fab", "stack-overflow"]}
-              size='3x'
-              tw='text-blue-900 px-2 hover:text-blue-800'
-            />
-          </a>
-          <a href='https://www.facebook.com/trevor.mcdougald.7'>
-            <FontAwesomeIcon
-              icon={["fab", "facebook"]}
-              size='3x'
-              tw='text-blue-900 px-2 hover:text-blue-800'
-            />
-          </a>
+          <HeaderIcon iconLink='https://github.com/TrevorMcDougald' iconName='github' />
+          <HeaderIcon iconLink='https://www.linkedin.com/in/trevormcdougald/' iconName='linkedin' />
+          <HeaderIcon
+            iconLink='https://stackoverflow.com/users/5233908/trevor-mcdougald'
+            iconName='stack-overflow'
+          />
+          <HeaderIcon iconLink='https://www.facebook.com/trevor.mcdougald.7' iconName='facebook' />
         </div>
         <div tw='flex self-center'>
           <NavigationLink active>Resume</NavigationLink>
