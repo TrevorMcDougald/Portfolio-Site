@@ -1,13 +1,12 @@
 import React, { FunctionComponent } from "react";
 import "twin.macro";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
 import Header from "./components/layout/Header/Header";
 import Resume from "./components/Resume/Resume";
 import "tailwindcss/dist/base.min.css";
 import "./App.css";
+import registerFaIcons from "./services/registerFaIcons";
 
-library.add(fab);
+registerFaIcons();
 
 const App: FunctionComponent = () => {
   return (
