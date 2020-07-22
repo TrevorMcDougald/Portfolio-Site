@@ -31,7 +31,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Yarn Install
       run: |
-        yarn install
+        cd client && yarn install
     - name: Production Build
       run: |
         yarn build
