@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Producn Build
+name: Production Build
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -34,10 +34,10 @@ jobs:
         cd client && yarn install
     - name: Production Build
       run: |
-        yarn build
+        cd client && yarn build
     - name: Unit Tests
       run: |
-        yarn test
+        cd client && yarn test
     - name: Deploy to S3
       uses: jakejarvis/s3-sync-action@master
       with:
@@ -47,7 +47,7 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.AWS_REGION }}
-        SOURCE_DIR: "build"
+        SOURCE_DIR: "cient/build"
     # Runs a single command using the runners shell
     # - name: Run a one-line script
     #  run: echo Hello, world!
