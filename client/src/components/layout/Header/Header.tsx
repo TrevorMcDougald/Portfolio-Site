@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import tw, { styled, css } from "twin.macro";
+import tw, { styled } from "twin.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface OwnProps {
@@ -9,13 +9,6 @@ interface OwnProps {
 type Props = OwnProps;
 
 const HeaderTitle = tw.h1`flex text-5xl font-extrabold justify-center pt-10 pb-3 text-gray-800`;
-
-const linkStyles = [
-  tw`
-    text-xl
-    text-gray-800
-  `
-];
 
 const NavigationLink = styled.a<{ active: boolean }>`
   ${tw`text-2xl font-black text-gray-600 border-b-4 border-gray-600 border-solid`};
