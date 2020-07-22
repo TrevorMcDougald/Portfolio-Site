@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Producn Build
+name: Production Build
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -18,7 +18,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [10.x, 12.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,18 +26,18 @@ jobs:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
         # Sets up the Node to the environment using the Node version defined in the matrix
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
     - name: Yarn Install
       run: |
-        yarn install
+        cd client && yarn install
     - name: Production Build
       run: |
-        yarn build
+        cd client && yarn build
     - name: Unit Tests
       run: |
-        yarn test
+        cd client && yarn test
     - name: Deploy to S3
       uses: jakejarvis/s3-sync-action@master
       with:
@@ -47,7 +47,7 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.AWS_REGION }}
-        SOURCE_DIR: "build"
+        SOURCE_DIR: "cient/build"
     # Runs a single command using the runners shell
     # - name: Run a one-line script
     #  run: echo Hello, world!
