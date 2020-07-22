@@ -8,6 +8,8 @@
 client/node_modules
 client/build
 
+/.aws
+
 # testing
 /coverage
 
