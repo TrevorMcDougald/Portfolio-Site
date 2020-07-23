@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 import tw, { styled } from "twin.macro";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import HeaderIcon from "./HeaderIcon";
 
 interface OwnProps {

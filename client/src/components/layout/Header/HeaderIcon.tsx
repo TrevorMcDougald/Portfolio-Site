@@ -12,7 +12,7 @@ type Props = OwnProps;
 
 const HeaderIcon: FunctionComponent<Props> = ({ iconName, iconLink }: Props) => {
   return (
-    <a href={iconLink} tw='text-red-300 px-2 hover:text-red-200'>
+    <a href={iconLink} tw='text-gray-500 px-2 hover:text-gray-400'>
       <FontAwesomeIcon icon={["fab", iconName]} size='2x' />
     </a>
   );
