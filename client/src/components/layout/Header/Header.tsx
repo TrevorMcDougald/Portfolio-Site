@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import tw, { styled } from "twin.macro";
+import { NavLink } from "react-router-dom";
 import HeaderIcon from "./HeaderIcon";
 
 interface OwnProps {
@@ -10,16 +11,19 @@ type Props = OwnProps;
 
 const HeaderTitle = tw.h1`flex text-5xl font-extrabold justify-center pt-10 pb-3 text-gray-800`;
 
-const NavigationLink = styled.a<{ active: boolean }>`
-  ${tw`text-2xl font-black text-gray-600 border-b-4 border-gray-600 border-solid`};
+const NavigationLink = styled(NavLink)`
+  ${tw`text-left text-2xl opacity-50 font-medium text-gray-600`};
   text-underline-position: under;
   text-underline-offset: 0;
+  &.active {
+    ${tw`opacity-100 font-bold text-gray-600`};
+  }
 `;
 
 const Header: FunctionComponent<Props> = ({ siteTitle }: Props) => {
   return (
-    <header className='flex w-1/3 min-h-full bg-gray-200' data-testid='header'>
-      <div tw='flex flex-col flex-none w-full self-center pb-32'>
+    <header className='flex w-1/3 min-h-full bg-gray-200 ' data-testid='header'>
+      <div tw='flex flex-col flex-none w-full self-center pb-32 px-4'>
         <HeaderTitle>{siteTitle}</HeaderTitle>
         <div tw='flex self-center pb-8 w-3/5 justify-around'>
           <HeaderIcon iconLink='https://github.com/TrevorMcDougald' iconName='github' />
@@ -30,8 +34,11 @@ const Header: FunctionComponent<Props> = ({ siteTitle }: Props) => {
           />
           <HeaderIcon iconLink='https://www.facebook.com/trevor.mcdougald.7' iconName='facebook' />
         </div>
-        <div tw='flex self-center'>
-          <NavigationLink active>Resume</NavigationLink>
+        <div tw='flex flex-col self-center text-left pb-2'>
+          <NavigationLink exact to='/'>
+            Home
+          </NavigationLink>
+          <NavigationLink to='/resume'>Resume</NavigationLink>
         </div>
       </div>
     </header>

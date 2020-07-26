@@ -7,7 +7,7 @@ type Props = OwnProps;
 
 const Resume: FunctionComponent<Props> = (props) => {
   return (
-    <div tw='flex-1 flex-col flex-grow self-stretch m-2 w-full lg:w-10/12 xl:w-6/12 overflow-hidden mx-auto'>
+    <div tw='flex-1 flex-col flex-grow self-stretch m-2 w-full lg:w-10/12 xl:w-6/12 overflow-hidden my-auto mx-auto'>
       <img
         alt='Resume'
         className='mx-auto rounded-lg shadow mb-2'
