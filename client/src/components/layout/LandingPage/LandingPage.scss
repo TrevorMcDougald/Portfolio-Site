@@ -48,6 +48,7 @@
 
 /*Time to animate*/
 .x1 {
+  top: 40%;
 	-webkit-animation: moveclouds 15s linear infinite;
 	-moz-animation: moveclouds 15s linear infinite;
 	-o-animation: moveclouds 15s linear infinite;
@@ -55,7 +56,7 @@
 
 /*variable speed, opacity, and position of clouds for realistic effect*/
 .x2 {
-	left: 490px;
+	left: 490px; top: 40%;
 
 	-webkit-transform: scale(1.2);
 	-moz-transform: scale(1.2);
@@ -70,7 +71,7 @@
 }
 
 .x3 {
-	left: -250px; top: 400px;
+	left: -250px; top: 60%;
 
 	-webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
@@ -96,7 +97,7 @@
 }
 
 .x5 {
-	left: -150px; top: -150px;
+	left: -150px; top: -20%;
 
 	-webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
@@ -108,9 +109,23 @@
 	-o-animation: moveclouds 15s linear infinite;
 }
 
+.x6 {
+  left: -350px;
+  top: 30%;
+
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  transform: scale(1.4);
+  opacity: 0.8; /*opacity proportional to the size*/
+
+  -webkit-animation: moveclouds 12s linear infinite;
+  -moz-animation: moveclouds 12s linear infinite;
+  -o-animation: moveclouds 12s linear infinite;
+}
+
 @keyframes moveclouds {
-  0% {left: 2000px;}
-	100% {left: -2000px;}
+  0% {left: 110%;}
+	100% {left: -20%;}
 }
 
 @-webkit-keyframes moveclouds {
@@ -125,3 +140,46 @@
 	0% {margin-left: 3000px;}
 	100% {margin-left: -3000px;}
 }
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes bounce {
+  100% {
+    -webkit-transform: translate(0px, -50px);
+    -moz-transform: translate(0px, -50px);
+    -ms-transform: translate(0px, -50px);
+    -o-transform: translate(0px, -50px);
+    transform: translate(0px, -50px);
+  }
+  0% {
+    -webkit-transform: translate(0px, -50px);
+    -moz-transform: translate(0px, -50px);
+    -ms-transform: translate(0px, -50px);
+    -o-transform: translate(0px, -50px);
+    transform: translate(0px, -50px);
+  }
+  50% {
+    -webkit-transform: translate(0px, 50px);
+    -moz-transform: translate(0px, 50px);
+    -ms-transform: translate(0px, 50px);
+    -o-transform: translate(0px, 50px);
+    transform: translate(0px, 50px);
+  }
+}
+

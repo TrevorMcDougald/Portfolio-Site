@@ -15,7 +15,7 @@ const backgroundVid = "/Above Clouds.webm";
 
 const App: FunctionComponent = () => {
   return (
-    <div tw='bg-gray-100 min-h-screen max-w-full overflow-x-hidden flex flex-col'>
+    <div tw='bg-sky-blue min-h-screen max-w-full overflow-x-hidden flex flex-col'>
       <div tw='flex flex-grow min-h-screen flex-row justify-start'>
         <Header siteTitle='Trevor McDougald' />
         <Route component={LandingPage} exact path='/' />
