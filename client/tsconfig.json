@@ -18,12 +18,18 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "plugins": [
+      {
+        "name": "typescript-plugin-tw-template"
+      }
+    ]
   },
   "include": [
     "src",
     "./tailwind.config.js",
     "./postcss.config.js",
-    "twin.d.ts"
+    "./src/twin.d.ts",
+    "./src/**/*"
   ]
 }

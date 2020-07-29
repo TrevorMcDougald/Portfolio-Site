@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import registerFaIcons from "../../../../services/registerFaIcons";
+import registerFaIcons from "../../../../utils/registerFaIcons";
 
 import Header from "../Header";
 

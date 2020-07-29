@@ -9,10 +9,10 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-const HeaderTitle = tw.h1`flex text-5xl font-extrabold justify-center pt-10 pb-3 text-gray-800`;
+const HeaderTitle = tw.h1`flex sm:text-3xl md:text-4xl text-5xl font-extrabold justify-center pt-10 pb-3 text-gray-800`;
 
 const NavigationLink = styled(NavLink)`
-  ${tw`text-left text-2xl opacity-50 font-medium text-gray-600`};
+  ${tw`text-left md:text-xl text-2xl opacity-50 font-medium text-gray-600 pb-4 uppercase`};
   text-underline-position: under;
   text-underline-offset: 0;
   &.active {
@@ -25,7 +25,7 @@ const Header: FunctionComponent<Props> = ({ siteTitle }: Props) => {
     <header className='flex w-1/3 min-h-full bg-gray-200 ' data-testid='header'>
       <div tw='flex flex-col flex-none w-full self-center pb-32 px-4'>
         <HeaderTitle>{siteTitle}</HeaderTitle>
-        <div tw='flex self-center pb-8 w-3/5 justify-around'>
+        <div tw='flex self-center pb-8 w-4/5 justify-around'>
           <HeaderIcon iconLink='https://github.com/TrevorMcDougald' iconName='github' />
           <HeaderIcon iconLink='https://www.linkedin.com/in/trevormcdougald/' iconName='linkedin' />
           <HeaderIcon
@@ -39,6 +39,7 @@ const Header: FunctionComponent<Props> = ({ siteTitle }: Props) => {
             Home
           </NavigationLink>
           <NavigationLink to='/resume'>Resume</NavigationLink>
+          <NavigationLink to='/contact'>Contact</NavigationLink>
         </div>
       </div>
     </header>

@@ -7,7 +7,8 @@ import LandingPage from "./components/layout/LandingPage/LandingPage";
 import Resume from "./components/Resume/Resume";
 import "tailwindcss/dist/base.min.css";
 import "./App.css";
-import registerFaIcons from "./services/registerFaIcons";
+import registerFaIcons from "./utils/registerFaIcons";
+import ContactForm from "./components/ContactForm/ContactForm";
 
 registerFaIcons();
 
@@ -20,6 +21,7 @@ const App: FunctionComponent = () => {
         <Header siteTitle='Trevor McDougald' />
         <Route component={LandingPage} exact path='/' />
         <Route component={Resume} path='/resume' />
+        <Route component={ContactForm} path='/contact' />
       </div>
       <Footer />
     </div>
