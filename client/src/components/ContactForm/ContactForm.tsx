@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useRef } from "react";
 import tw, { styled } from "twin.macro";
+import FieldsContainer from "./FieldsContainer";
 
 interface OwnProps {}
 
@@ -62,6 +63,41 @@ const ContactForm: FunctionComponent<Props> = (props) => {
       .then((json) => console.log("Contact Form Response: ", json));
   };
 
+  const FormFields = (
+    <>
+      <FormInput
+        inputData={nameField}
+        inputID='name'
+        inputPlaceholder='Full Name'
+        inputType='text'
+      />
+      <FormInput
+        inputData={emailField}
+        inputID='email'
+        inputPlaceholder='Preferred Email'
+        inputType='email'
+      />
+      <textarea
+        id='messageTextarea'
+        name='message'
+        placeholder='Message'
+        rows={5}
+        tw='mx-auto bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-2/3 appearance-none leading-normal'
+        {...messageField}
+      />
+    </>
+  );
+
+  const FormMessage = (
+    <>
+      <h2 tw='text-xl text-gray-700 font-semibold'>Interested in working together?</h2>
+      <ul tw='list-disc list-inside mb-4'>
+        <li tw='text-gray-600 text-sm pt-4'>McDougald.engineer@gmail.com</li>
+        <li tw='text-gray-600 text-sm italic pt-2'>Contact Directly for Mobile</li>
+      </ul>
+    </>
+  );
+
   return (
     <>
       <div tw='m-2 w-full my-auto mx-auto '>
@@ -70,48 +106,16 @@ const ContactForm: FunctionComponent<Props> = (props) => {
           onSubmit={handleSubmit}
           tw='w-3/5 bg-gray-100 rounded mx-auto pt-4 shadow-lg'
         >
-          <h1 tw='uppercase text-3xl text-gray-700 font-bold text-center pb-16'>
+          <h1 tw='uppercase text-3xl text-gray-700 font-bold text-center pb-12'>
             Lets Keep in Touch
           </h1>
-          <div tw='flex'>
-            <div tw='w-3/5'>
-              <FormInput
-                inputData={nameField}
-                inputID='name'
-                inputPlaceholder='Full Name'
-                inputType='text'
-              />
-              <FormInput
-                inputData={emailField}
-                inputID='email'
-                inputPlaceholder='Preferred Email'
-                inputType='email'
-              />
-              <textarea
-                id='messageTextarea'
-                name='message'
-                placeholder='Message'
-                rows={5}
-                tw='mx-auto bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-2/3 appearance-none leading-normal'
-                {...messageField}
-              />
-            </div>
-            <div tw='w-2/5 pt-4 pr-6'>
-              <h2 tw='text-xl text-gray-700 font-semibold'>Interested in working together?</h2>
-              <ul tw='list-disc list-inside mb-4'>
-                <li tw='text-gray-600 text-sm pt-4'>McDougald.engineer@gmail.com</li>
-                <li tw='text-gray-600 text-sm italic pt-2'>Contact Directly for Mobile</li>
-              </ul>
-            </div>
-          </div>
-          <div tw='flex w-full justify-end'>
-            <button
-              tw='shadow-2xl bg-blue-900 text-xl hover:bg-blue-800 text-white font-bold py-4 px-12 -mr-5 -mb-5 rounded shadow mt-4'
-              type='submit'
-            >
-              Send
-            </button>
-          </div>
+          <FieldsContainer formFields={FormFields} formMessage={FormMessage} />
+          <button
+            tw='shadow-2xl bg-blue-900 text-xl hover:bg-blue-800 text-white font-bold py-4 px-12 -ml-5 -mb-5 rounded shadow mt-4'
+            type='submit'
+          >
+            Send
+          </button>
         </form>
       </div>
       <div>
