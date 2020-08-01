@@ -58,6 +58,7 @@ const ContactForm: FunctionComponent<Props> = (props) => {
     );
     // @ts-ignore
     const data = new FormData(formRef.current);
+    console.assert(data);
     fetch("http://0.0.0.0:8081/connection", { method: "POST", body: data })
       .then((res) => res.json())
       .then((json) => console.log("Contact Form Response: ", json));
@@ -99,31 +100,24 @@ const ContactForm: FunctionComponent<Props> = (props) => {
   );
 
   return (
-    <>
-      <div tw='m-2 w-full my-auto mx-auto '>
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          tw='w-3/5 bg-gray-100 rounded mx-auto pt-4 shadow-lg'
+    <div tw='m-2 w-full my-auto mx-auto '>
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        tw='w-3/5 bg-gray-100 rounded mx-auto pt-4 shadow-lg'
+      >
+        <h1 tw='uppercase text-3xl text-gray-700 font-bold text-center pb-12'>
+          Lets Keep in Touch
+        </h1>
+        <FieldsContainer formFields={FormFields} formMessage={FormMessage} />
+        <button
+          tw='shadow-2xl bg-blue-900 text-xl hover:bg-blue-800 text-white font-bold py-4 px-12 -ml-5 -mb-5 rounded shadow mt-4'
+          type='submit'
         >
-          <h1 tw='uppercase text-3xl text-gray-700 font-bold text-center pb-12'>
-            Lets Keep in Touch
-          </h1>
-          <FieldsContainer formFields={FormFields} formMessage={FormMessage} />
-          <button
-            tw='shadow-2xl bg-blue-900 text-xl hover:bg-blue-800 text-white font-bold py-4 px-12 -ml-5 -mb-5 rounded shadow mt-4'
-            type='submit'
-          >
-            Send
-          </button>
-        </form>
-      </div>
-      <div>
-        <h1>{nameField.value}</h1>
-        <h1>{emailField.value}</h1>
-        <h1>{messageField.value}</h1>
-      </div>
-    </>
+          Send
+        </button>
+      </form>
+    </div>
   );
 };
 
